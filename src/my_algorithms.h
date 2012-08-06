@@ -290,4 +290,45 @@ T Rselect(T* A, int length, int index){
 
 }
 
+/* The famous rot13 Caesar-shift cipher. Produces ciphertext for the message input (a c-style string) */
+char* rot13(char s[]){
+	char* c = &s[0];
+	int i;
+	for (i = 0; s[i] != '\0'; i++){
+		if (s[i] >= 'A' && s[i] <= 'Z')
+			c[i] = 'A' + (((c[i]-'A') + 13))%26;
+		else if (s[i] >= 'a' && s[i] <= 'z')
+			c[i] = 'a' + (((c[i]-'a') + 13))%26;
+	}
+
+	return c;
+}
+
+/* Binary search for an element of a sorted array. Exercise 3-1 in "C Programming Language", by the way. */
+int binsearch(long x, int* v, int length){
+	
+	int low, mid, high;
+
+	low = 0;
+	high = length - 1;
+	while (low <  high){
+		mid = (low + high) / 2;
+		if (x < v[mid])
+			high = mid;
+		else 
+			low = mid + 1;
+						}
+
+	if (x == mid)    /* found match */
+		return mid;
+	else if (x == mid - 1)     /* found match */
+		return mid - 1; 
+	else if (x == mid + 1)     /* found match */
+		return mid + 1;
+	else 
+		return -1;   /* no match */
+
+
+}
+
 #endif
