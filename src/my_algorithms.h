@@ -1,4 +1,4 @@
-/* Ryan Koven, 2012. my_algorithms.h: c++ header file defines templated functions that implement sorting and searching algorithms and other useful functionality, 
+/* Ryan Koven, 2012. my_algorithms.h: c++ header file defines functions that implement sorting and searching algorithms and other useful functionality, 
 like partitioning an array around a pivot element. */
 
 
@@ -304,7 +304,7 @@ char* rot13(char s[]){
 	return c;
 }
 
-/* Binary search for an element of a sorted array. Exercise 3-1 in "C Programming Language", by the way. */
+/* Binary search for an element of a sorted array of integers. Exercise 3-1 in "C Programming Language", by the way. */
 int binsearch(long x, int* v, int length){
 	
 	int low, mid, high;
@@ -329,6 +329,21 @@ int binsearch(long x, int* v, int length){
 		return -1;   /* no match */
 
 
+}
+
+/* Implementation of the insertion sort algorithm. Outputs a sorted array. */
+template<typename T>
+void insertion_sort(T* A, int size){
+	int key = 0;
+	for (int i = 1; i < size; i++){
+		key = A[i];
+		int j = i - 1;
+		while(j>=0 && A[j] > key){
+			A[j+1] = A[j];
+			j--;
+		}
+	A[j+1] = key;	
+	}
 }
 
 #endif
