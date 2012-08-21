@@ -304,7 +304,11 @@ char* rot13(char s[]){
 	return c;
 }
 
+<<<<<<< HEAD
 /* Binary search for an element of a sorted array of integers. Exercise 3-1 in "C Programming Language", by the way. */
+=======
+/* Binary search for an element of a sorted array. */
+>>>>>>> 1a568a789b4ea2e26b1282dda43981265e339ad6
 int binsearch(long x, int* v, int length){
 	
 	int low, mid, high;
