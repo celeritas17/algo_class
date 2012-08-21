@@ -1,2 +1,2 @@
-Ryan Koven, 2012. my_algorithms.h: C++ header file defines templated functions that implement sorting and searching algorithms and other useful functionality, 
+Ryan Koven, 2012. my_algorithms.h: C++ header file defines functions that implement sorting and searching algorithms and other useful functionality, 
 like partitioning an array around a pivot element.
